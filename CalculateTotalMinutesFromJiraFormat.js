@@ -1,3 +1,4 @@
+// CalculateTotalMinutesFromJiraFormat.js
 function totMinutes(timeString = "") {
   const pattern = /([0-9]+d)*\s*([0-9]+h)*\s*([0-9]+m)*\s*([0-9]+s)*/;
   const timeStrings = timeString?.split(",").map(x => x?.trim() ?? "").filter(x => !!x);
@@ -16,7 +17,7 @@ function totMinutes(timeString = "") {
     const intMinute = parseInt(mMinute.slice(0, -1)) * 60;
     const intSecond = parseInt(sSecond.slice(0, -1));
 
-    totalSeconds = intDay + intHour + intMinute + intSecond;
+    totalSeconds += (intDay + intHour + intMinute + intSecond);
   }
 
   const totalMinutes = Math.floor(totalSeconds / 60);
