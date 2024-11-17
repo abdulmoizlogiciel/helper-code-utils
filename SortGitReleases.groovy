@@ -2,7 +2,7 @@
 // test a regex here for groovy: https://regex-testdrive.com/en/dotest
 
 def reg = ~/v{0,1}([0-9]+){1}(.([0-9]+))?(.([0-9]+))?(.([0-9]+))?(-[a-zA-Z]+.([0-9]+))?/
-def gettags = ("git ls-remote -t https://logicielsubscriptions:ghp_asdfsadf@github.com/LogicielServices/VtraderWebApi.git").execute()
+def gettags = ("git ls-remote -t https://sdfsdf:ghp_asdfsadf@github.com/LogicielServices/VtraderWebApi.git").execute()
 
 def sorted = gettags.text.readLines().collect {
     it.split()[1].replaceAll('refs/heads/', '').replaceAll('refs/tags/', '').replaceAll("\\^\\{\\}", '')
